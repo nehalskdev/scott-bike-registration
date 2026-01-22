@@ -7,7 +7,7 @@ export default function Home(): JSX.Element {
   return (
     <div className="h-screen w-full flex justify-center items-center">
       <Button>
-        <Link href={"/registeration"}>Registeration</Link>
+        <Link href={"/registration"}>Registeration</Link>
       </Button>
     </div>
   );

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { BikeModel } from "@/app/registeration/model/types";
+import { BikeModel } from "@/src/app/registration/schemas/types";
 
 const mockData: BikeModel[] = [
   {
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest): Promise<Response> {
     if (!serialNumber) {
       return new Response(
         JSON.stringify({ error: "serialNumber is required" }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
 
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest): Promise<Response> {
 
     const item = mockData.find(
       (item) =>
-        item.serialNumber.toLowerCase() === serialNumber.trim().toLowerCase()
+        item.serialNumber.toLowerCase() === serialNumber.trim().toLowerCase(),
     );
 
     if (item) {
@@ -59,7 +59,7 @@ export async function POST(request: NextRequest): Promise<Response> {
         {
           status: 200,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     } else {
       return NextResponse.json(
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest): Promise<Response> {
           error: "Your Serial Number is wrong. Please check and try again.",
           status_code: 404,
         },
-        { status: 404, headers: { "Content-Type": "application/json" } }
+        { status: 404, headers: { "Content-Type": "application/json" } },
       );
     }
   } catch (err) {
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 }

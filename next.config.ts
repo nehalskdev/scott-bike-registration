@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Production optimization */
+  productionBrowserSourceMaps: false,
+  poweredByHeader: false,
+  compress: true,
+
+  /* TypeScript configuration */
 };
 
 export default nextConfig;

@@ -1,4 +1,4 @@
-import { BikeModel } from "../schemas/types";
+import { BikeModel } from "@/src/app/registration/schemas/types";
 import { BASE_URL } from "@/src/lib/utils";
 
 export type SerialNumberRequest = { serialNumber: string };
