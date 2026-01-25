@@ -71,7 +71,9 @@ export async function POST(request: NextRequest): Promise<Response> {
       );
     }
   } catch (err) {
-    console.error(err);
+    if (process.env.NODE_ENV === "development") {
+      console.error(err);
+    }
     return NextResponse.json(
       { error: "Internal server error", status_code: 500 },
       {
