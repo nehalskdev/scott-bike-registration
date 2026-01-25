@@ -193,7 +193,7 @@ const PersonalInformationStep = (): React.JSX.Element => {
   const { control } = useFormContext<BikeRegistrationFormData>();
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-4">
+      <div className="max-w-md space-y-4">
         <TextField name="firstName" label="First Name" placeholder="John" />
 
         <TextField name="lastName" label="Last Name" placeholder="Doe" />

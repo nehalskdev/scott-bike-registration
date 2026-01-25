@@ -29,7 +29,7 @@ const BikeInformationStep = (): React.JSX.Element => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-4">
+      <div className="max-w-md space-y-4">
         {/* Serial Number - Read Only */}
         <FormField
           control={control}
@@ -93,7 +93,7 @@ const BikeInformationStep = (): React.JSX.Element => {
       </div>
 
       {/* Navigation */}
-      <div className="flex justify-end gap-4 mt-4">
+      <div className="flex justify-end gap-4 mt-8 mb-8">
         <Button
           variant="link"
           type="button"

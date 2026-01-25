@@ -95,7 +95,7 @@ const RegistrationForm = (): React.JSX.Element => {
    */
   const NavigationButtons = useMemo(
     () => (
-      <div className="mt-4 flex justify-end gap-2">
+      <div className="mt-8 mb-7 flex justify-end gap-2">
         <Button
           size="lg"
           variant="link"
@@ -159,24 +159,26 @@ const RegistrationForm = (): React.JSX.Element => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)}>
+      <form onSubmit={form.handleSubmit(handleSubmit)} className="pb-8">
         <StepperIndicators labels={steps.map((s) => s.title)} />
 
         {steps.map((step, index) => (
           <Step key={index} index={index}>
-            {step.showBikeCard && <BikeInfoCard imageSize={150} />}
+            <div className="space-y-6">
+              {step.showBikeCard && <BikeInfoCard imageSize={150} />}
 
-            <StepTitle
-              className="text-2xl text-neutral-500 md:text-3xl font-brandon uppercase font-extrabold tracking-wider"
-              stepNumber={index}
-            >
-              {step.title}
-            </StepTitle>
+              <StepTitle
+                className="text-2xl text-neutral-500 md:text-3xl font-brandon uppercase font-extrabold tracking-wider"
+                stepNumber={index}
+              >
+                {step.title}
+              </StepTitle>
 
-            <StepContent>
-              {step.component}
-              {index === 2 && NavigationButtons}
-            </StepContent>
+              <StepContent>
+                {step.component}
+                {index === 2 && NavigationButtons}
+              </StepContent>
+            </div>
           </Step>
         ))}
       </form>
